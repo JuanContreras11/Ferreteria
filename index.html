@@ -135,50 +135,15 @@
         </div>
     </div>
     
-    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#calcularTotal").click(function() {
-                let cantidadClavos = parseInt($("#clavos").val()) || 0;
-                let cantidadPernos = parseInt($("#pernos").val()) || 0;
-                let cantidadTuercas = parseInt($("#tuercas").val()) || 0;
-                let nombre = $("#nombre").val() || "";
-            let edad = $("#edad").val() || "";
     
-                // Actualizar el estado de pago
-                $(".clavosCantidad").text(cantidadClavos);
-                $(".clavosTotal").text('$' + (cantidadClavos * 50));
-                $(".pernosCantidad").text(cantidadPernos);
-                $(".pernosTotal").text('$' + (cantidadPernos * 150));
-                $(".tuercasCantidad").text(cantidadTuercas);
-                $(".tuercasTotal").text('$' + (cantidadTuercas * 150));
-    
-                // Calcular el total general y actualizar en el estado de pago
-                let totalGeneral = cantidadClavos * 50 + cantidadPernos * 150 + cantidadTuercas * 150;
-                let totalCantidad = cantidadClavos + cantidadPernos  + cantidadTuercas;
-                $(".totalGeneral").text('$' + totalGeneral);
-                $(".totalCantidad").text(totalCantidad);
-
-    
-                // Actualizar el stock en productos y detalles
-                let stockClavos = 200 - cantidadClavos;
-                let stockPernos = 150 - cantidadPernos;
-                let stockTuercas = 150 - cantidadTuercas;
-    
-                // Actualizar los valores de stock en la tabla de productos y detalles
-                $(".stockClavos").text(stockClavos);
-                $(".stockPernos").text(stockPernos);
-                $(".stockTuercas").text(stockTuercas);
-                $("#nombreEstadoPago").text(nombre);
-            $("#edadEstadoPago").text(edad);
-            });
-        });
-    </script>
+   
   </body>
 </html>
